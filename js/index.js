@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+function namedFunc(data){
+	window.open(data, '_blank', 'location=yes');
+}
 var app = {
     // Application Constructor
     initialize: function() {
@@ -58,10 +61,7 @@ var app = {
 
         scanner.scan( function (result) { 
 
-            alert("We got a barcode\n" + 
-            "Result: " + result.text + "\n" + 
-            "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled);  
+        navigator.notification.alert(result.text, namedFunc(result.text), 'Scan Result', 'ok')
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
