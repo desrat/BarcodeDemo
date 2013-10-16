@@ -77,6 +77,7 @@ var app = {
 
         }, function (error) { 
             console.log("Scanning failed: ", error); 
+            
         } );
     },
 
